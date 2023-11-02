@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+        <!--Termine de completar la configuración con la base de datos-->
+        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/DC2</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">pass</property>
+
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <property name="connection.pool_size">10</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="show_sql">false</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="ormRPGgame.model.Daga"/>
+
+        <mapping class="ormRPGgame.model.Magos.Baculo"/>
+        <mapping class="ormRPGgame.model.Magos.Espectros"/>
+        <mapping class="ormRPGgame.model.Magos.HabilidadesM"/>
+        <mapping class="ormRPGgame.model.Magos.Mago"/>
+
+        <mapping class="ormRPGgame.model.Tanques.Hacha"/>
+        <mapping class="ormRPGgame.model.Tanques.Trolls"/>
+        <mapping class="ormRPGgame.model.Tanques.HabilidadesT"/>
+        <mapping class="ormRPGgame.model.Tanques.Tanque"/>
+
+        <mapping class="ormRPGgame.model.Guerreros.Espada"/>
+        <mapping class="ormRPGgame.model.Guerreros.Goblins"/>
+        <mapping class="ormRPGgame.model.Guerreros.HabilidadesG"/>
+        <mapping class="ormRPGgame.model.Guerreros.Guerrero"/>
+
+        <mapping class="ormRPGgame.model.Jugadores.Jugador"/>
+
+        <mapping class="ormRPGgame.model.Dragon.Dragon"/>
+        <mapping class="ormRPGgame.model.Dragon.Grupo"/>
+
+        <mapping class="ormRPGgame.model.Druidas.Druida"/>
+        <mapping class="ormRPGgame.model.Druidas.Pociones"/>
+
+        <mapping class="ormRPGgame.model.Ciudades.Ciudad"/>
+        <mapping class="ormRPGgame.model.Ciudades.Forja"/>
+        <mapping class="ormRPGgame.model.Ciudades.Tienda"/>
+
+        <!--Añada tantas clases como entidades tenga en su modelo-->
+        <!--Las clases deben crearse en el paquete "model"-->
+    </session-factory>
+
+</hibernate-configuration>
